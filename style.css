@@ -5,7 +5,7 @@
     --color-primary: #5c886e;   /* Sage Green (Main accent) */
     --color-highlight: #ffb86c; /* Bronze/Amber (Interactive highlight) */
     --color-text-light: #e0e6ed;
-    --color-text-dark: #334e3e;
+    --color-text-dark: #333333; /* Near black for readability */
 }
 
 /* --- Global Styles --- */
@@ -17,334 +17,179 @@ body {
     color: var(--color-text-dark);
     line-height: 1.6;
 }
+/* (Keep the rest of the existing CSS for header, nav, tab-content, and general layout) */
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* --- Tab 1: Product Showcase Specifics --- */
+.hero-product-block {
+    /* ... (keep flex layout) ... */
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ddd;
 }
 
-h2, h3 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
+.model-viewer-placeholder {
+    position: relative;
+    padding: 10px;
+    background: #000; /* Dark background for the 3D viewer */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* --- Header & Navigation --- */
-header {
-    background-color: var(--color-dark);
-    color: white;
-    padding: 60px 0 20px;
-    text-align: center;
+#exploded-view-video {
+    display: block;
+    border-radius: 8px;
+    max-height: 400px; /* Constrain video size */
+    object-fit: contain;
 }
 
-header h1 {
-    font-size: 3.5em;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-
-.tagline {
-    font-size: 1.2em;
-    font-weight: 300;
-    opacity: 0.8;
-}
-
-.nav-bar {
-    background-color: var(--color-dark);
-    border-bottom: 2px solid var(--color-primary);
-    padding: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.nav-bar .container {
-    display: flex;
-    justify-content: center;
-}
-
-.nav-button {
-    background: none;
-    border: none;
-    color: var(--color-text-light);
-    padding: 15px 30px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-bottom 0.3s;
-    border-bottom: 3px solid transparent;
-}
-
-.nav-button:hover {
-    color: white;
-    background-color: #384c60;
-}
-
-.nav-button.active {
-    border-bottom: 3px solid var(--color-highlight);
-    color: white;
-    background-color: #384c60;
-}
-
-/* --- Tab Content Sections --- */
-.tab-content {
-    padding: 50px 0;
-    min-height: 700px;
-}
-
-.hidden {
+#static-product-image.hidden {
     display: none;
 }
 
-/* --- Tab 1: Product Showcase --- */
-.hero-product-block {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-}
-
-.product-visual {
-    flex: 1;
-    text-align: center;
-}
-
-.product-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.product-summary {
-    flex: 1;
-}
-
-.metric-block {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--color-dark);
-    color: white;
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 8px;
-}
-
-.metric-item {
-    text-align: center;
-}
-
-.metric-item .value {
-    display: block;
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--color-highlight);
-}
-
-.metric-item .label {
-    display: block;
+.model-caption {
+    color: var(--color-text-light);
     font-size: 0.9em;
-    opacity: 0.7;
-}
-
-.cta-mini {
-    font-style: italic;
-    font-size: 1.1em;
-    color: var(--color-primary);
-}
-
-.engineering-flow {
+    padding-top: 10px;
     text-align: center;
-    margin-top: 80px;
+}
+
+.engineering-details {
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
 }
 
 .flow-image {
-    max-width: 600px;
-    margin: 20px auto;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    /* Existing style for circuit image */
 }
 
-.flow-description {
-    font-style: italic;
-    color: #666;
-}
-
-/* --- Tab 2: Research --- */
-.research-intro {
-    text-align: center;
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
-
-.research-grid {
-    display: flex;
-    gap: 30px;
-}
-
-.data-view-panel {
-    flex: 3;
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    min-height: 400px;
-    text-align: center;
-}
-
-.variable-select-panel {
-    flex: 1;
-}
-
-.variable-select-panel h3 {
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 10px;
-    margin-top: 0;
-    color: var(--color-dark);
-}
-
-.variable-button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 10px;
-    background-color: #e0e6ed;
-    color: var(--color-dark);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.variable-button:hover, .variable-button.active-var {
-    background-color: var(--color-primary);
-    color: white;
-    font-weight: 500;
-}
-
-#research-image {
-    max-width: 80%;
-    max-height: 300px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-}
-
-.raw-data-summary {
-    margin-top: 50px;
-    padding: 20px;
-    border: 1px solid var(--color-primary);
-    background-color: #f0f4f7;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.citation-link a {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* --- Tab 3: Impact --- */
-.impact-stats-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.stat-box {
-    background-color: var(--color-dark);
-    color: white;
-    padding: 30px 20px;
-    border-radius: 8px;
-    text-align: center;
-    border-bottom: 4px solid var(--color-highlight);
-    font-family: 'Oswald', sans-serif;
-}
-
-.stat-box::before {
-    content: attr(data-unit) attr(data-value);
-    display: block;
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--color-highlight);
-}
-
-.stat-box::after {
-    content: attr(data-label);
-    display: block;
-    font-size: 0.9em;
-    margin-top: 5px;
-    opacity: 0.8;
-}
-
-.application-details {
+/* --- Tab 2: Research Specifics (Configuration Builder) --- */
+.config-builder-container {
     display: flex;
     gap: 40px;
 }
 
-.app-point {
+.builder-controls {
     flex: 1;
-    padding: 20px;
-    border-left: 3px solid var(--color-primary);
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.impact-calculator-v2 {
-    margin-top: 80px;
-    background-color: var(--color-primary);
-    color: white;
-    padding: 40px;
+.builder-controls label, .builder-controls select {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.builder-controls select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.power-simulation-output {
+    flex: 2;
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    padding: 30px;
     border-radius: 8px;
     text-align: center;
 }
 
-.impact-calculator-v2 input, .impact-calculator-v2 button {
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: none;
-    margin: 10px;
+#simulation-graphic {
+    height: 150px;
+    border: 2px solid var(--color-primary);
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.impact-calculator-v2 button {
-    background-color: var(--color-highlight);
-    color: var(--color-dark);
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s;
+#electron-flow {
+    color: var(--color-highlight);
+    font-size: 1.5em;
+    font-weight: 700;
+    animation: flow 1.5s infinite linear; /* Prepare for live simulation effect */
 }
 
-.calc-result {
-    font-size: 1.2em;
-    margin: 0 15px;
+@keyframes flow {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
 }
 
-/* --- Footer --- */
-footer {
-    background-color: var(--color-dark);
-    color: var(--color-text-light);
+#sim-power-output {
+    font-size: 1.4em;
+    color: var(--color-highlight);
+    font-family: 'Oswald', sans-serif;
+}
+
+/* --- Tab 3: Impact Specifics (Scroll and Scale) --- */
+.scroll-trigger-section {
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    border-bottom: 1px solid #ddd;
+    min-height: 400px;
+    opacity: 0; /* Hidden initially, JS handles fade in */
+    transition: opacity 1s;
+}
+
+.scroll-trigger-section.visible {
+    opacity: 1;
+}
+
+.scroll-trigger-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.scroll-stat-left, .scroll-stat-right {
+    flex: 1;
     text-align: center;
-    padding: 15px 0;
-    font-size: 0.85em;
 }
 
-/* --- Responsiveness --- */
-@media (max-width: 992px) {
-    .hero-product-block, .research-grid, .application-details {
-        flex-direction: column;
-    }
-    .impact-stats-container {
-        grid-template-columns: 1fr;
-    }
-    .variable-select-panel {
-        flex: none;
-        width: 100%;
-        margin-top: 30px;
-    }
-    .metric-block {
-        flex-direction: column;
-    }
-    .metric-item {
-        padding: 10px 0;
-    }
+.scroll-text-left, .scroll-text-right {
+    flex: 1;
+    padding: 0 40px;
 }
+
+.stat-large {
+    display: block;
+    font-size: 4em;
+    font-weight: 700;
+    color: var(--color-highlight);
+    font-family: 'Oswald', sans-serif;
+}
+
+.stat-label {
+    font-size: 1.2em;
+    color: var(--color-primary);
+}
+
+.large-scale-container {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.scale-visual {
+    display: inline-block;
+    margin: 0 50px;
+}
+
+.scale-stat {
+    display: block;
+    font-size: 3em;
+    color: var(--color-dark);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.scale-unit {
+    display: block;
+    font-size: 1.1em;
+    color: var(--color-primary);
+}
+/* (Keep the rest of the existing CSS) */
