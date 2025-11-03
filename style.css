@@ -3,9 +3,10 @@
     --color-dark: #1e2a38;      /* Deep Indigo/Charcoal */
     --color-background: #f4f6f8; /* Very subtle off-white */
     --color-primary: #5c886e;   /* Sage Green (Main accent) */
+    --color-secondary: #98c1a6; /* Soft Mint Green */
     --color-highlight: #ffb86c; /* Bronze/Amber (Interactive highlight) */
     --color-text-light: #e0e6ed;
-    --color-text-dark: #333333; /* Near black for readability */
+    --color-text-dark: #222222; /* Near black for readability */
 }
 
 /* --- Global Styles --- */
@@ -17,13 +18,115 @@ body {
     color: var(--color-text-dark);
     line-height: 1.6;
 }
-/* (Keep the rest of the existing CSS for header, nav, tab-content, and general layout) */
 
-/* --- Tab 1: Product Showcase Specifics --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Enhanced Headings and Typography */
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--color-dark);
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 1.8em;
+    color: var(--color-primary); /* Use accent color for subheadings */
+    margin-top: 0;
+}
+
+.tab-content p {
+    font-size: 1.05em;
+    line-height: 1.75; /* Increased line height for easy scanning */
+    margin-bottom: 1.5em;
+}
+
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 60px 0 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.2em;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.nav-bar {
+    background-color: var(--color-dark);
+    border-bottom: 2px solid var(--color-primary);
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar .container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-bottom 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-button:hover {
+    color: white;
+    background-color: #384c60;
+}
+
+.nav-button.active {
+    border-bottom: 3px solid var(--color-highlight);
+    color: white;
+    background-color: #384c60;
+}
+
+/* --- Tab Content Sections --- */
+.tab-content {
+    padding: 50px 0;
+    min-height: 700px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- Tab 1: Product Showcase --- */
 .hero-product-block {
-    /* ... (keep flex layout) ... */
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
     padding-bottom: 50px;
     border-bottom: 1px solid #ddd;
+}
+
+.product-visual {
+    flex: 1;
+    text-align: center;
 }
 
 .model-viewer-placeholder {
@@ -34,8 +137,9 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-#exploded-view-video {
-    display: block;
+#exploded-view-video, #static-product-image {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     max-height: 400px; /* Constrain video size */
     object-fit: contain;
@@ -52,6 +156,41 @@ body {
     text-align: center;
 }
 
+#toggle-view {
+    margin-top: 15px;
+}
+
+.product-summary {
+    flex: 1;
+}
+
+.metric-block {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-dark);
+    color: white;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-item .value {
+    display: block;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-highlight);
+}
+
+.metric-item .label {
+    display: block;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
 .engineering-details {
     margin-top: 40px;
     border-top: 1px solid #ccc;
@@ -59,10 +198,24 @@ body {
 }
 
 .flow-image {
-    /* Existing style for circuit image */
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
-/* --- Tab 2: Research Specifics (Configuration Builder) --- */
+
+/* --- Tab 2: Research --- */
+.research-intro {
+    text-align: center;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Configuration Builder Layout */
 .config-builder-container {
     display: flex;
     gap: 40px;
@@ -76,18 +229,38 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.builder-controls label, .builder-controls select {
-    display: block;
-    margin-bottom: 15px;
+.builder-controls h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: var(--color-dark);
+    margin-bottom: 25px;
+}
+
+.builder-controls label {
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: var(--color-primary);
 }
 
 .builder-controls select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    background-color: #fcfcfc;
+    border: 2px solid var(--color-secondary);
     border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s;
 }
 
+.builder-controls select:focus {
+    border-color: var(--color-highlight);
+    outline: none;
+}
+
+/* Simulation Output Styling */
 .power-simulation-output {
     flex: 2;
     background-color: var(--color-dark);
@@ -112,7 +285,7 @@ body {
     color: var(--color-highlight);
     font-size: 1.5em;
     font-weight: 700;
-    animation: flow 1.5s infinite linear; /* Prepare for live simulation effect */
+    animation: flow 1.5s infinite linear;
 }
 
 @keyframes flow {
@@ -127,7 +300,64 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-/* --- Tab 3: Impact Specifics (Scroll and Scale) --- */
+/* Variable Selection Panel Buttons (Highly Visible) */
+.research-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.data-view-panel {
+    flex: 3;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    min-height: 400px;
+    text-align: center;
+}
+
+.variable-select-panel {
+    flex: 1;
+}
+
+.variable-select-panel h3 {
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: var(--color-dark);
+}
+
+.variable-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: var(--color-background);
+    color: var(--color-dark);
+    border: 1px solid var(--color-primary); /* Border in primary accent color */
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    text-align: left;
+    font-weight: 500;
+}
+
+.variable-button:hover {
+    background-color: #f0f4f7;
+    color: var(--color-dark);
+    transform: translateY(-1px);
+}
+
+.variable-button.active-var {
+    background-color: var(--color-primary); /* Solid accent fill when active */
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Tab 3: Impact (Scroll and Scale) --- */
 .scroll-trigger-section {
     display: flex;
     align-items: center;
@@ -169,6 +399,30 @@ body {
     color: var(--color-primary);
 }
 
+/* Custom List Marker Style for Readability */
+.engineering-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.engineering-details li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.7em;
+    font-size: 1em;
+}
+
+.engineering-details li::before {
+    content: "—"; /* Use a long dash */
+    color: var(--color-highlight); /* Bronze color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+/* Large Scale Visualization */
 .large-scale-container {
     text-align: center;
     padding: 80px 0;
@@ -192,4 +446,65 @@ body {
     font-size: 1.1em;
     color: var(--color-primary);
 }
-/* (Keep the rest of the existing CSS) */
+
+/* Impact Calculator V2 */
+.impact-calculator-v2 {
+    margin-top: 80px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.impact-calculator-v2 input, .impact-calculator-v2 button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    margin: 10px;
+}
+
+.impact-calculator-v2 button {
+    background-color: var(--color-highlight);
+    color: var(--color-dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calc-result {
+    font-size: 1.2em;
+    margin: 0 15px;
+    font-weight: 500;
+    color: var(--color-highlight);
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.85em;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    .hero-product-block, .research-grid, .application-details, .scroll-trigger-section {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .scroll-trigger-section.reverse {
+        flex-direction: column; /* Reset reverse on small screens */
+    }
+    .scroll-stat-left, .scroll-stat-right, .scroll-text-left, .scroll-text-right {
+        padding: 10px 0;
+    }
+    .scroll-trigger-section {
+        padding: 40px 0;
+    }
+    .config-builder-container {
+        flex-direction: column;
+    }
+}
