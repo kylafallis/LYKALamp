@@ -3,126 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LYKA Lamp: Bio-Anodic Decentralized Energy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>LYKA Lamp: Bio-Energy Decentralized</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>The LYKA Lamp</h1>
-            <p class="subtitle">Electrogenic Biotransformation of Organic Substrates</p>
-            <a href="#optimization" class="cta-button">Explore the Research 🔬</a>
+            <h1>The **LYKA Lamp**</h1>
+            <p class="tagline">Harnessing the Microbe: Renewable Power from Household Compost.</p>
         </div>
     </header>
 
+    <div class="nav-bar">
+        <div class="container">
+            <button class="nav-button active" data-target="product">The Product</button>
+            <button class="nav-button" data-target="research">Optimization Research</button>
+            <button class="nav-button" data-target="impact">Application & Future</button>
+        </div>
+    </div>
+
     <main class="container">
-        
-        <section id="introduction" class="content-section">
-            <h2 class="section-title">I. The Innovation: Compost to Current</h2>
-            <div class="intro-grid">
-                <div class="text-block">
-                    <p>The **LYKA Lamp** is a functional lighting system powered entirely by **Microbial Fuel Cells (MFCs)** that utilize household compost. MFCs are bioreactors that convert the energy in chemical bonds of organic compounds into electrical energy via microorganisms under anaerobic conditions.</p>
-                    <p>This project successfully developed an integrated system to generate, store, and convert this bio-energy into stable power for an LED lightbulb, offering a sustainable, cost-effective, and low-maintenance lighting solution.</p>
-                    <p class="summary-key">**Hypothesis:** MFC energy from average US family compost is sufficient to run at least one LED light bulb and cut costs by more than $20 per year.</p>
+        <section id="product" class="tab-content active">
+            <div class="hero-product-block">
+                <div class="product-visual">
+                    <img src="PXL_20251019_170021290.jpg" alt="The final assembled LYKA Lamp." class="product-image">
                 </div>
-                <div class="image-block">
-                    <img src="[Photo of the LYKA Lamp Final Product]" alt="The final LYKA Lamp prototype." class="responsive-image">
+                <div class="product-summary">
+                    <h2>III. The Integrated Solution</h2>
+                    <p>The LYKA Lamp is the first fully integrated household device to convert organic waste directly into stable, usable electricity. It is an end-to-end decentralized energy solution, engineered to maximize microbial output and provide genuine functional light.</p>
+                    
+                    <div class="metric-block">
+                        <div class="metric-item">
+                            <span class="value">**$16.77**</span>
+                            <span class="label">Total Material Cost</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="value">**11.95 hrs**</span>
+                            <span class="label">Charge Time for Full Capacity</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="value">**2.43 hrs**</span>
+                            <span class="label">Continuous Run Time (9V LED)</span>
+                        </div>
+                    </div>
+
+                    <p class="cta-mini">Engineered for sustainability, efficiency, and scale.</p>
                 </div>
+            </div>
+
+            <div class="engineering-flow">
+                <h3>System Architecture</h3>
+                <p>The system links the bio-anodic MFC chambers to a custom electronics suite to achieve stable power storage and delivery.</p>
+                <img src="PXL_20251019_170111099.MP.jpg" alt="Custom DC Step-up Converter and PCB." class="flow-image">
+                <p class="flow-description">Circuit components include the **LM2596 Buck Power Convertor** and **TP4056 Charger Module** for efficient energy storage in the rechargeable battery.</p>
             </div>
         </section>
 
-        <section id="optimization" class="content-section section-light">
-            <h2 class="section-title">II. Optimization: Maximizing Bio-Energy Output</h2>
-            <p class="center-text">Rigorous comparative testing was performed across four key variables to determine the most efficient MFC configuration, peaking at **1.73 Watts**.</p>
+        <section id="research" class="tab-content hidden">
+            <h2>II. Optimization Research: The 1.73 Watt Benchmark</h2>
+            <p class="research-intro">The final design was informed by systematic comparative testing (Test 1 & 2) across critical variables to achieve the maximum output of 1.73 Watts per cell.</p>
             
-            <div class="optimization-grid" id="optimization-container">
-                <div class="opt-card" data-key="age">
-                    <span class="opt-title">Compost Age ⏳</span>
+            <div class="research-grid">
+                <div class="data-view-panel">
+                    <img id="research-image" src="" alt="Research Visual" class="responsive-image">
+                    <p id="research-text"></p>
                 </div>
-                <div class="opt-card" data-key="electrode">
-                    <span class="opt-title">Electrode Material ⚡</span>
-                </div>
-                <div class="opt-card" data-key="spacing">
-                    <span class="opt-title">Electrode Spacing 📏</span>
-                </div>
-                <div class="opt-card" data-key="volume">
-                    <span class="opt-title">Container Volume 💧</span>
+
+                <div class="variable-select-panel">
+                    <h3>Tested Variables</h3>
+                    <button class="variable-button" data-key="age">Compost Age</button>
+                    <button class="variable-button" data-key="electrode">Electrode Material</button>
+                    <button class="variable-button" data-key="spacing">Electrode Spacing</button>
+                    <button class="variable-button" data-key="volume">Container Volume</button>
                 </div>
             </div>
-
-            <div class="opt-detail-box" id="detail-box">
-                <p class="initial-prompt">**Hover over the cards above** to see the research insights that drove the final design of the LYKA Lamp's Microbial Fuel Cell.</p>
-                <img id="detail-image" src="" alt="Optimization Graph" style="display: none;">
-                <p id="detail-text"></p>
-            </div>
-        </section>
-        
-        <section id="engineering" class="content-section">
-            <h2 class="section-title">III. Engineering the Solution (Test 3)</h2>
-            <p class="center-text">The final design converted the low, variable MFC power into stable 9V light using a custom-built circuit.</p>
-
-            <div class="engineering-grid">
-                <div class="circuit-block">
-                    <h3>Custom Circuitry</h3>
-                    <p>The MFC is connected to a circuit board featuring an LM2596 Buck Power Convertor and a TP4056 Charger Module. This system harvests the energy, manages the battery, and delivers stable power to the LED.</p>
-                    <p>The lamp body and MFC housing were designed using SolidWorks and 3D printed with ABA filament.</p>
-                </div>
-                <div class="circuit-image">
-                    <img src="[Flow chart of LYKA 1 software components]" alt="LYKA Circuit Diagram" class="responsive-image">
-                </div>
-            </div>
-
-            <div class="engineering-metrics">
-                <h3>LYKA Performance Metrics</h3>
-                <ul>
-                    <li>**Peak Power (MFC):** 1.73 Watts.</li>
-                    <li>**Energy Required:** 4.91 Watt-hours.</li>
-                    <li>**Charge Time:** 11.95 hours of energy generation required to fill the battery.</li>
-                    <li>**Run Time:** Provides 2.43 hours of continuous light.</li>
-                    <li>**Material Cost:** Only **$16.77** per unit.</li>
-                </ul>
+            
+            <div class="raw-data-summary">
+                <h3>Raw Power Data</h3>
+                <p>The final optimal configuration (12-18 Month Compost, 1L Container, Carbon Cloth, 1 cm Spacing) yielded an average output of **1.73 Watts**.</p>
+                <p class="citation-link">
+                    <a href="[Link to Full Voltage/Amperage Charts from PDF]" target="_blank">View full data progression charts.</a>
+                </p>
             </div>
         </section>
 
-        <section id="impact" class="content-section section-light">
-            <h2 class="section-title">IV. Societal Impact & Future Application</h2>
+        <section id="impact" class="tab-content hidden">
+            <h2>IV. Global Application & Economic Feasibility</h2>
+            <p class="impact-intro">The LYKA Lamp’s true potential lies in its ability to simultaneously address energy poverty, climate change, and household waste management.</p>
 
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <span class="impact-icon">💰</span>
-                    <h3>Economic Benefit</h3>
-                    <p>The average U.S. family could sustain **3.11 LYKA Lamps**, leading to an annual energy savings of **$128.76**. Widespread adoption could yield over \$12 billion in national energy savings annually.</p>
+            <div class="impact-stats-container">
+                <div class="stat-box" data-value="128.76" data-label="Annual Savings (Avg. US Family)" data-unit="$"></div>
+                <div class="stat-box" data-value="3.11" data-label="Lamps Supported (Avg. US Family)" data-unit=""></div>
+                <div class="stat-box" data-value="409" data-label="CO₂ Emissions Offset (Million Metric Tons / 50% US Adoption)" data-unit=""></div>
+            </div>
+            
+            <div class="application-details">
+                <div class="app-point">
+                    <h3>Decentralized Energy</h3>
+                    <p>Provides a crucial, reliable lighting solution for the 770M+ people without access to traditional electricity. The simple, low-cost design makes it instantly accessible for **Off-Grid Communities** and **Disaster Relief**.</p>
                 </div>
-                <div class="impact-card">
-                    <span class="impact-icon">🌎</span>
-                    <h3>Environmental Gain</h3>
-                    <p>MFC adoption prevents approximately **45,000 lbs of CO₂-equivalent emissions** per family yearly. Scaling to 50% of the U.S. population could offset over 409 million metric tons of CO₂ emissions.</p>
-                </div>
-                <div class="impact-card">
-                    <span class="impact-icon">💡</span>
-                    <h3>Global Accessibility</h3>
-                    <p>The simple, low-cost design makes it accessible for all households, particularly for the 770M+ people without electricity, and is ideal for off-grid communities and disaster relief.</p>
+                <div class="app-point">
+                    <h3>Waste Mitigation</h3>
+                    <p>Mitigates the environmental load of organic waste, which contributes to greenhouse gas emissions. In agricultural settings, MFCs can also reduce nutrient runoff, directly addressing issues like ocean **dead zones**.</p>
                 </div>
             </div>
 
-            <div class="impact-calculator">
-                <h3>Personal Impact Estimator</h3>
-                <label for="compost-input">Enter your estimated weekly compost (in lbs):</label>
-                <input type="number" id="compost-input" value="4.52" min="0" step="0.1">
-                <button onclick="calculateImpact()">Calculate Savings</button>
+            <div class="impact-calculator-v2">
+                <h3>Estimate Your Family's Impact</h3>
+                <p>Based on your project survey, calculate the potential savings from composting.</p>
+                <input type="number" id="compost-input" value="4.52" min="0.1" step="0.1" placeholder="Weekly Compost (lbs)">
+                <button id="calculate-button">Calculate</button>
                 <div id="savings-output">
-                    <p>Estimated Annual Savings: **$128.76**</p>
-                    <p>LYKA Lamps Supported: **3.11**</p>
+                    <span class="calc-result">Savings: **$128.76**/year</span> | 
+                    <span class="calc-result">Lamps Supported: **3.11**</span>
                 </div>
-                <p class="caption">*Based on average US family data from project survey.</p>
             </div>
         </section>
-    </main>
 
+    </main>
+    
     <footer>
-        <p>Kyla Fallis, 12th Grade | Bath High School | 2025 Candidate Entry</p>
+        <p>Kyla Fallis, 12th Grade | National Gallery Candidate Entry | The LYKA Lamp Project</p>
     </footer>
 
     <script src="script.js"></script>
