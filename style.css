@@ -1,27 +1,35 @@
-/* --- Global Styles and Typography --- */
+/* Color Palette: Soft Green, Sage, and Mint */
+:root {
+    --color-primary: #5c886e; /* Sage Green */
+    --color-secondary: #98c1a6; /* Soft Mint Green */
+    --color-accent: #ffb86c;    /* Soft Amber/Gold for highlights */
+    --color-background: #f8fbf8; /* Near-white background */
+    --color-text-dark: #334e3e; /* Darker Green for body text */
+}
+
+/* --- Global Styles --- */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0fdf4; /* Very Light Mint Background */
-    color: #1a431a; /* Dark Forest Green Text */
-    line-height: 1.7;
-    transition: background-color 0.3s;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    line-height: 1.6;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 20px;
 }
 
-/* --- Header Section --- */
+/* --- Header --- */
 header {
-    background-color: #228b22; /* Forest Green */
+    background-color: var(--color-primary);
     color: white;
     padding: 80px 0;
     text-align: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -31,42 +39,42 @@ header h1 {
 }
 
 .subtitle {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 300;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .cta-button {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #ffd700; /* Gold Accent */
-    color: #228b22;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
     text-decoration: none;
-    font-weight: 600;
-    border-radius: 50px;
+    font-weight: 500;
+    border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .cta-button:hover {
-    background-color: #ffc107;
+    background-color: #ff9d40;
     transform: translateY(-2px);
 }
 
 /* --- Content Sections --- */
 .content-section {
-    padding: 80px 0;
+    padding: 70px 0;
 }
 
-.section-dark {
-    background-color: #e6f7e6; /* Lightest Green for contrast */
+.section-light {
+    background-color: var(--color-secondary);
 }
 
 .section-title {
     font-size: 2.2em;
-    color: #228b22; /* Forest Green */
+    color: var(--color-primary);
     text-align: center;
-    margin-bottom: 60px;
-    border-bottom: 3px solid #ffd700;
+    margin-bottom: 50px;
+    border-bottom: 3px solid var(--color-accent);
     display: inline-block;
     padding-bottom: 10px;
     margin-left: auto;
@@ -74,11 +82,18 @@ header h1 {
     width: fit-content;
 }
 
-/* --- Description Grid (III) --- */
-.description-grid {
+.center-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1em;
+}
+
+/* --- Introduction Grid --- */
+.intro-grid {
     display: flex;
-    gap: 50px;
-    align-items: flex-start;
+    gap: 40px;
+    align-items: center;
 }
 
 .text-block {
@@ -94,143 +109,209 @@ header h1 {
 .responsive-image {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.caption {
-    font-style: italic;
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 10px;
+.summary-key {
+    font-weight: 500;
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-left: 5px solid var(--color-primary);
+    margin-top: 20px;
 }
 
-.key-metrics {
-    margin-top: 50px;
-    padding: 30px;
-    background-color: #d1e7d1; /* Light Pastel Green */
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.key-metrics h3 {
-    color: #228b22;
-    border-bottom: 1px solid #79b079;
-    padding-bottom: 10px;
-}
-
-.key-metrics ul {
-    list-style-type: disc;
-    padding-left: 25px;
-}
-
-.key-metrics li {
-    margin-bottom: 8px;
-}
-
-/* --- Benefit Cards (IV) --- */
-.benefit-cards-container {
+/* --- Optimization Section (Interactive) --- */
+.optimization-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
-.card {
+.opt-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.opt-card:hover, .opt-card.active {
+    background-color: var(--color-primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.opt-title {
+    font-weight: 500;
+    display: block;
+}
+
+.opt-detail-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.initial-prompt {
+    font-style: italic;
+    color: var(--color-primary);
+    font-size: 1.2em;
+}
+
+#detail-image {
+    max-width: 90%;
+    max-height: 200px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+/* --- Engineering Section --- */
+.engineering-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.circuit-block {
+    flex: 1;
+}
+
+.circuit-image {
+    flex: 1;
+    text-align: center;
+}
+
+.engineering-metrics {
+    padding: 30px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    border: 1px solid var(--color-primary);
+}
+
+.engineering-metrics h3 {
+    color: var(--color-primary);
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.engineering-metrics ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.engineering-metrics li {
+    padding: 5px 0;
+    font-weight: 400;
+}
+
+/* --- Impact Section --- */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.impact-card {
     background: white;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-top: 5px solid #4caf50; /* Primary Green Accent */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--color-accent);
+    text-align: center;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card-icon {
+.impact-icon {
     font-size: 2.5em;
-    color: #4caf50;
+    color: var(--color-accent);
     margin-bottom: 15px;
     display: block;
 }
 
-.card h3 {
-    color: #228b22;
-    margin-top: 0;
-}
-
-.conclusion-quote {
-    background-color: #228b22;
+.impact-calculator {
+    background-color: var(--color-primary);
     color: white;
-    padding: 30px;
-    border-radius: 12px;
-    font-style: italic;
-    margin-top: 60px;
+    padding: 40px;
+    border-radius: 10px;
     text-align: center;
+}
+
+.impact-calculator label, .impact-calculator input, .impact-calculator button {
+    margin: 10px;
+}
+
+.impact-calculator input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+    text-align: center;
+}
+
+.impact-calculator button {
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+#savings-output {
+    margin-top: 20px;
     font-size: 1.2em;
-    border: 2px solid #ffd700;
-}
-
-/* --- Energy Cycle Demo (JS Interaction) --- */
-.demo-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 30px;
-    padding: 20px;
-    border: 2px dashed #4caf50;
-    border-radius: 8px;
-}
-
-.cycle-step {
-    padding: 15px 25px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.cycle-arrow {
-    font-size: 1.5em;
-    color: #4caf50;
+    font-weight: 300;
 }
 
 /* --- Footer --- */
 footer {
-    background-color: #1a431a; /* Darkest Green */
-    color: #c8e6c9;
+    background-color: #334e3e;
+    color: #e8f5e9;
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
+    padding: 15px 0;
+    font-size: 0.85em;
 }
 
 /* --- Responsiveness --- */
 @media (max-width: 992px) {
-    .description-grid {
+    .intro-grid, .engineering-grid {
         flex-direction: column;
-        gap: 30px;
     }
-    .text-block, .image-block {
-        flex: none;
-        max-width: 100%;
+    .optimization-grid, .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .engineering-metrics {
+        margin-top: 30px;
     }
 }
+
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 2.5em;
+    .optimization-grid, .impact-grid {
+        grid-template-columns: 1fr;
     }
-    .container {
-        padding: 0 15px;
+    .impact-calculator input {
+        width: 80%;
+        margin-bottom: 15px;
     }
-    .demo-box {
-        flex-wrap: wrap;
-    }
-    .cycle-arrow {
-        display: none;
+    .impact-calculator button {
+        width: 80%;
     }
 }
