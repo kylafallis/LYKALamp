@@ -1,0 +1,236 @@
+/* --- Global Styles and Typography --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0fdf4; /* Very Light Mint Background */
+    color: #1a431a; /* Dark Forest Green Text */
+    line-height: 1.7;
+    transition: background-color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* --- Header Section --- */
+header {
+    background-color: #228b22; /* Forest Green */
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ffd700; /* Gold Accent */
+    color: #228b22;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #ffc107;
+    transform: translateY(-2px);
+}
+
+/* --- Content Sections --- */
+.content-section {
+    padding: 80px 0;
+}
+
+.section-dark {
+    background-color: #e6f7e6; /* Lightest Green for contrast */
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #228b22; /* Forest Green */
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 3px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+/* --- Description Grid (III) --- */
+.description-grid {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.text-block {
+    flex: 2;
+    font-size: 1.1em;
+}
+
+.image-block {
+    flex: 1;
+    text-align: center;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.key-metrics {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #d1e7d1; /* Light Pastel Green */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.key-metrics h3 {
+    color: #228b22;
+    border-bottom: 1px solid #79b079;
+    padding-bottom: 10px;
+}
+
+.key-metrics ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.key-metrics li {
+    margin-bottom: 8px;
+}
+
+/* --- Benefit Cards (IV) --- */
+.benefit-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid #4caf50; /* Primary Green Accent */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 2.5em;
+    color: #4caf50;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card h3 {
+    color: #228b22;
+    margin-top: 0;
+}
+
+.conclusion-quote {
+    background-color: #228b22;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    font-style: italic;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 1.2em;
+    border: 2px solid #ffd700;
+}
+
+/* --- Energy Cycle Demo (JS Interaction) --- */
+.demo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px dashed #4caf50;
+    border-radius: 8px;
+}
+
+.cycle-step {
+    padding: 15px 25px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cycle-arrow {
+    font-size: 1.5em;
+    color: #4caf50;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1a431a; /* Darkest Green */
+    color: #c8e6c9;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    .description-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .text-block, .image-block {
+        flex: none;
+        max-width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .demo-box {
+        flex-wrap: wrap;
+    }
+    .cycle-arrow {
+        display: none;
+    }
+}
