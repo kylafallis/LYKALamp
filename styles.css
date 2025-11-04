@@ -1,11 +1,11 @@
 /* Color Palette: Soft Sage Green, Charcoal, Cream Accent */
 :root {
-    --color-dark: #2c3e50;      /* Dark Charcoal/Indigo for backgrounds */
-    --color-background: #fcfcfc; /* Near-white background */
-    --color-primary: #5c886e;   /* Sage Green (Main accent) */
-    --color-secondary: #98c1a6; /* Soft Mint Green for light sections */
-    --color-highlight: #ffb86c; /* Bronze/Amber (Interactive highlight) */
-    --color-text-dark: #222222; /* Near black for readability */
+    --color-dark: #535a3b;      /* Dark Charcoal/Indigo for backgrounds */
+    --color-background: #cedcc3; /* Near-white background */
+    --color-primary: #a7b99e;   /* Sage Green (Main accent) */
+    --color-secondary: #eff7d3; /* Soft Mint Green for light sections */
+    --color-highlight: #a7b99e; /* Bronze/Amber (Interactive highlight) */
+    --color-text-dark: #535a3b; /* Near black for readability */
 }
 
 /* --- Global Styles --- */
