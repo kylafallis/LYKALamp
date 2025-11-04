@@ -1,17 +1,16 @@
-/* Color Palette: Dark Indigo, Charcoal, Sage Accent, Bronze Highlight */
+/* Color Palette: Soft Sage Green, Charcoal, Cream Accent */
 :root {
-    --color-dark: #1e2a38;      /* Deep Indigo/Charcoal */
-    --color-background: #f4f6f8; /* Very subtle off-white */
+    --color-dark: #2c3e50;      /* Dark Charcoal/Indigo for backgrounds */
+    --color-background: #fcfcfc; /* Near-white background */
     --color-primary: #5c886e;   /* Sage Green (Main accent) */
-    --color-secondary: #98c1a6; /* Soft Mint Green */
+    --color-secondary: #98c1a6; /* Soft Mint Green for light sections */
     --color-highlight: #ffb86c; /* Bronze/Amber (Interactive highlight) */
-    --color-text-light: #e0e6ed;
     --color-text-dark: #222222; /* Near black for readability */
 }
 
 /* --- Global Styles --- */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--color-background);
@@ -26,9 +25,12 @@ body {
 }
 
 /* Enhanced Headings and Typography */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
 h2 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
     font-size: 2.8em;
     letter-spacing: 1px;
     text-align: center;
@@ -37,19 +39,16 @@ h2 {
 }
 
 h3 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
     font-size: 1.8em;
-    color: var(--color-primary); /* Use accent color for subheadings */
+    color: var(--color-primary);
     margin-top: 0;
 }
 
 .tab-content p {
     font-size: 1.05em;
-    line-height: 1.75; /* Increased line height for easy scanning */
+    line-height: 1.75;
     margin-bottom: 1.5em;
 }
-
 
 /* --- Header & Navigation --- */
 header {
@@ -92,6 +91,7 @@ header h1 {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-bottom 0.3s;
     border-bottom: 3px solid transparent;
+    font-weight: 500;
 }
 
 .nav-button:hover {
@@ -115,6 +115,14 @@ header h1 {
     display: none;
 }
 
+/* --- Image and Caption Styles --- */
+.image-label {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+}
+
 /* --- Tab 1: Product Showcase --- */
 .hero-product-block {
     display: flex;
@@ -132,7 +140,7 @@ header h1 {
 .model-viewer-placeholder {
     position: relative;
     padding: 10px;
-    background: #000; /* Dark background for the 3D viewer */
+    background: #111;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
@@ -141,7 +149,7 @@ header h1 {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    max-height: 400px; /* Constrain video size */
+    max-height: 400px;
     object-fit: contain;
 }
 
@@ -206,6 +214,27 @@ header h1 {
     border-radius: 8px;
 }
 
+/* Custom List Marker Style for Readability */
+.engineering-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.engineering-details li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.7em;
+    font-size: 1em;
+}
+
+.engineering-details li::before {
+    content: "—";
+    color: var(--color-highlight);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
 
 /* --- Tab 2: Research --- */
 .research-intro {
@@ -219,6 +248,7 @@ header h1 {
 .config-builder-container {
     display: flex;
     gap: 40px;
+    margin-bottom: 50px;
 }
 
 .builder-controls {
@@ -230,15 +260,15 @@ header h1 {
 }
 
 .builder-controls h3 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     font-size: 1.5em;
     color: var(--color-dark);
     margin-bottom: 25px;
 }
 
 .builder-controls label {
-    font-weight: 700;
+    font-weight: 600;
     margin-top: 15px;
     margin-bottom: 5px;
     font-size: 0.95em;
@@ -253,6 +283,7 @@ header h1 {
     border-radius: 5px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: border-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .builder-controls select:focus {
@@ -297,13 +328,16 @@ header h1 {
 #sim-power-output {
     font-size: 1.4em;
     color: var(--color-highlight);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 /* Variable Selection Panel Buttons (Highly Visible) */
 .research-grid {
     display: flex;
     gap: 30px;
+    padding-top: 50px;
+    border-top: 1px solid #ddd;
 }
 
 .data-view-panel {
@@ -334,7 +368,7 @@ header h1 {
     margin-bottom: 10px;
     background-color: var(--color-background);
     color: var(--color-dark);
-    border: 1px solid var(--color-primary); /* Border in primary accent color */
+    border: 1px solid var(--color-primary);
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
@@ -350,12 +384,11 @@ header h1 {
 }
 
 .variable-button.active-var {
-    background-color: var(--color-primary); /* Solid accent fill when active */
+    background-color: var(--color-primary);
     color: white;
     font-weight: 700;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 /* --- Tab 3: Impact (Scroll and Scale) --- */
 .scroll-trigger-section {
@@ -364,7 +397,7 @@ header h1 {
     padding: 80px 0;
     border-bottom: 1px solid #ddd;
     min-height: 400px;
-    opacity: 0; /* Hidden initially, JS handles fade in */
+    opacity: 0;
     transition: opacity 1s;
 }
 
@@ -391,36 +424,13 @@ header h1 {
     font-size: 4em;
     font-weight: 700;
     color: var(--color-highlight);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .stat-label {
     font-size: 1.2em;
     color: var(--color-primary);
 }
-
-/* Custom List Marker Style for Readability */
-.engineering-details ul {
-    list-style: none;
-    padding: 0;
-}
-
-.engineering-details li {
-    padding-left: 1.5em;
-    position: relative;
-    margin-bottom: 0.7em;
-    font-size: 1em;
-}
-
-.engineering-details li::before {
-    content: "—"; /* Use a long dash */
-    color: var(--color-highlight); /* Bronze color */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
 
 /* Large Scale Visualization */
 .large-scale-container {
@@ -437,7 +447,7 @@ header h1 {
     display: block;
     font-size: 3em;
     color: var(--color-dark);
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
@@ -462,6 +472,7 @@ header h1 {
     border-radius: 5px;
     border: none;
     margin: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .impact-calculator-v2 button {
@@ -496,7 +507,7 @@ footer {
         min-height: auto;
     }
     .scroll-trigger-section.reverse {
-        flex-direction: column; /* Reset reverse on small screens */
+        flex-direction: column;
     }
     .scroll-stat-left, .scroll-stat-right, .scroll-text-left, .scroll-text-right {
         padding: 10px 0;
@@ -506,5 +517,8 @@ footer {
     }
     .config-builder-container {
         flex-direction: column;
+    }
+    .scale-visual {
+        margin: 10px 0;
     }
 }
