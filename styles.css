@@ -96,13 +96,13 @@ header h1 {
 
 .nav-button:hover {
     color: white;
-    background-color: #384c60;
+    background-color: #a7b99e;
 }
 
 .nav-button.active {
     border-bottom: 3px solid var(--color-highlight);
     color: white;
-    background-color: #384c60;
+    background-color: #eff7d3;
 }
 
 /* --- Tab Content Sections --- */
